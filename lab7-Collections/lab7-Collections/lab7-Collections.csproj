@@ -6,4 +6,10 @@
     <RootNamespace>lab7_Collections</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>System</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
