@@ -17,7 +17,7 @@ namespace lab7_Collections
             Card card1 = new Card("7",Card.Suits.Diamonds);
             Card card2 = new Card("2", Card.Suits.Hearts);
             Card card3 = new Card("10", Card.Suits.Clubs);
-            Card card4 = new Card("Q", Card.Suits.Spades);
+            Card card4 = new Card("K", Card.Suits.Spades);
             Card card5 = new Card("Q", Card.Suits.Spades);
             Card card6 = new Card("Ace", Card.Suits.Diamonds);
             myDeck.Add(card1);
@@ -56,7 +56,10 @@ namespace lab7_Collections
             string input = Console.ReadLine();
             string input2 = input.ToLower();
             if (input2 == "y")
-            { Deal(); }
+            {
+                Console.WriteLine("  ");
+                Deal();
+            }
             else Environment.Exit(0);
             
         }
