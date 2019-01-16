@@ -43,14 +43,16 @@ namespace lab7_Collections
 
         public T[] Remove( Card item)
         {
-
-              // T[] cardarr = new T[cards.Length - 1];
-                Console.WriteLine($"Removing {item.cardNum} {item.suit}");
+            
+            Console.WriteLine($"Removing {item.cardNum} {item.suit}");
 
             int index = Array.IndexOf(cards, item);
                 counter--;
-            return  cards.Where((val, idx) => idx != index).ToArray();
-                //  Array.Copy(cardsNew, cardarr, cardsNew.Length);
+
+          T[] newCards=cards.Where((val, idx) => idx != index).ToArray();
+
+            Array.Copy(newCards, cards, newCards.Length);
+            return cards;
             
         }
 
