@@ -8,7 +8,7 @@ namespace lab7_Collections
 {
    // enum CardSuits{ Hearts, Diamonds, Spades, Clubs};
 
-    class MyDeck<T> : IEnumerable<T>
+   public class MyDeck<T> : IEnumerable<T> where T : Card
     {
 
         T[] cards = new T[56];
@@ -41,17 +41,26 @@ namespace lab7_Collections
 
         //remove one card from deck
 
-        public T[] Remove( Card item)
+        public T[] Remove( T item)
         {
-           
-            int index = Array.IndexOf(cards, item);
-                counter--;
+          for(int i = 0; i < cards.Length; i++)
+            {
+                if (cards[i]==item) {
+                    int index = Array.IndexOf(cards, item);
+                    counter--;
 
-          T[] newCards=cards.Where((val, idx) => idx != index).ToArray();
+                    T[] newCards = cards.Where((val, idx) => idx != index).ToArray();
 
-            Array.Copy(newCards, cards, newCards.Length);
-            return cards;
-            
+                    Array.Copy(newCards, cards, newCards.Length);
+                    return cards;
+                }
+
+            }
+
+          
+                Console.WriteLine("This is not exsits.");
+                return null;
+
         }
 
 
