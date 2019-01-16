@@ -10,34 +10,51 @@ namespace lab7_Collections
         {
             Console.WriteLine("Hello World!");
 
-            MyDeck<Card> player1 = new MyDeck<Card>();
+            MyDeck<Card> myDeck = new MyDeck<Card>();
             Card card1 = new Card("7", "Dimonds");
             Card card2 = new Card("2", "Hearts");
             Card card3 = new Card("10", "Spades");
             Card card4 = new Card("Q", "Dimonds");
             Card card5 = new Card("Q", "Spades");
             Card card6 = new Card("Ace", "Hearts");
-            player1.Add(card1);
-            player1.Add(card2);
-            player1.Add(card3);
-            player1.Add(card4);
-            player1.Add(card5);
-            player1.Add(card6);
+            myDeck.Add(card1);
+            myDeck.Add(card2);
+            myDeck.Add(card3);
+            myDeck.Add(card4);
+            myDeck.Add(card5);
+            myDeck.Add(card6);
 
-            foreach (Card item in player1)
+            Console.WriteLine("The cards in your deck are:");
+    
+            foreach (Card item in myDeck)
             {
-                Console.WriteLine(item.cardNum + "   " + item.suit);
+                Console.Write($"{item.cardNum} {item.suit} ");
+            }
+            Console.WriteLine("      ");
+            Console.WriteLine("      ");
+            Card[] newarr= myDeck.Remove(card4);
+            Console.WriteLine("      ");
+            Console.WriteLine($"Cards left:  {myDeck.Count()}");
+
+
+            //Card[] newdeck = new Card[newarr.Length];
+            //Array.Copy(newarr, newdeck, newarr.Length);
+
+            foreach (Card item in newarr)
+            {
+                if (item == null) return;
+               else Console.Write($"{item.cardNum} {item.suit} ");      
+
             }
 
-          
 
-
-
-            Console.WriteLine(player1.Count());
+            // Deal();
 
         }
 
+        public void Deal()
+        {
 
-
+        }
     }
 }

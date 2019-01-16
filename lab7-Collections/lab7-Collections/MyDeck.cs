@@ -14,6 +14,8 @@ namespace lab7_Collections
         T[] cards = new T[56];
 
         int currentIndex = 0;
+
+        //to count how many cards added in the deck,instantiate one counter for that
         int counter = 0;
         public void Add(T item)
         {
@@ -39,14 +41,19 @@ namespace lab7_Collections
 
         //remove one card from deck
 
-        public T[] Remove(T item)
+        public T[] Remove( Card item)
         {
-            int index = Array.IndexOf(cards,item);
 
-            T[]  cardsNew = cards.Where((val, idx) => idx != index).ToArray();
-            counter--;
-            return cardsNew;
+              // T[] cardarr = new T[cards.Length - 1];
+                Console.WriteLine($"Removing {item.cardNum} {item.suit}");
+
+            int index = Array.IndexOf(cards, item);
+                counter--;
+            return  cards.Where((val, idx) => idx != index).ToArray();
+                //  Array.Copy(cardsNew, cardarr, cardsNew.Length);
+            
         }
+
 
         //count how many cards in the deck
 
@@ -56,8 +63,6 @@ namespace lab7_Collections
             return counter;
 
         }
-
-
 
         IEnumerator IEnumerable.GetEnumerator()
         {
