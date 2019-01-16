@@ -43,9 +43,7 @@ namespace lab7_Collections
 
         public T[] Remove( Card item)
         {
-            
-            Console.WriteLine($"Removing {item.cardNum} {item.suit}");
-
+           
             int index = Array.IndexOf(cards, item);
                 counter--;
 
