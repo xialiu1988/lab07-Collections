@@ -7,6 +7,19 @@ namespace CollectionsTDD
     public class UnitTest1
     {
         [Fact]
+        public void CanAddCard()
+        {
+
+            MyDeck<Card> myDeck = new MyDeck<Card>();
+            Card card1 = new Card("7", Card.Suits.Diamonds);
+            myDeck.Add(card1);
+            int a = myDeck.Count();
+            Assert.Equal(1, a);
+        }
+
+
+
+        [Fact]
         public void CannotRemoveaItemNOtExsit()
         {
             MyDeck<Card> myDeck = new MyDeck<Card>();
