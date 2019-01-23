@@ -20,6 +20,48 @@ namespace CollectionsTDD
 
 
         [Fact]
+        public void settersForcard()
+        {
+
+            MyDeck<Card> myDeck = new MyDeck<Card>();
+            Card card1 = new Card("7", Card.Suits.Diamonds);
+            card1.suit = Card.Suits.Clubs;
+            myDeck.Add(card1);
+            
+            Assert.Equal(Card.Suits.Clubs, card1.suit );
+        }
+
+
+        [Fact]
+        public void SettersForcardNumber()
+        {
+
+            MyDeck<Card> myDeck = new MyDeck<Card>();
+            Card card1 = new Card("7", Card.Suits.Diamonds);
+            card1.cardNum = "30";
+            myDeck.Add(card1);
+
+            Assert.Equal("30", card1.cardNum);
+        }
+
+        [Fact]
+        public void GettersCardnumber()
+        {
+            MyDeck<Card> myDeck = new MyDeck<Card>();
+            Card card1 = new Card("7", Card.Suits.Diamonds);
+            myDeck.Add(card1);
+            Assert.Equal("7", card1.cardNum);
+        }
+        [Fact]
+        public void CanGetCardSuit()
+        {
+            MyDeck<Card> myDeck = new MyDeck<Card>();
+            Card card1 = new Card("7", Card.Suits.Diamonds);
+            myDeck.Add(card1);
+            Assert.Equal(Card.Suits.Diamonds, card1.suit);
+        }
+
+        [Fact]
         public void CannotRemoveaItemNOtExsit()
         {
             MyDeck<Card> myDeck = new MyDeck<Card>();
